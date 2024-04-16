@@ -270,6 +270,58 @@ public class StudentDao extends Dao{
 
 		try{
 			//データベースから学生を取得
+			Student old = get(student.getNo());
+			if (old==null){
+				//学生が存在しなかった場合
+				//プリペアードステートメントにINSERT文をセット
+				statement = connection.prepareStatement("insert into student(no,name,ent_year,class_num,is_attend,school_cd)values(?,?,?,?,?,?)");
+				//プリアドステートメントに値をバインド
+				statement.setString(1,student.getNo());
+				statement.setString(2,student.getName());
+				statement.setInt(3, student.getEntYear());
+				statement.setString(4, student.getClassNum());
+				statement.setBoolean(5, student.isAttend());
+				statement.setString(6, student.getSchool().getCd());
+			}else{
+				//学生が存在した場合
+				//プライベートステートメントにUPDATE文をセット
+				statement = connection.prepareStatement("update student set name=?,ent_year=?,class_num=?,is_atend=? where no=?");
+				//プライベートステートメントに値をバインド
+				statement.setString(1, student.getName());
+				statement.setInt(2, student.getEntYear());
+				statement.setString(3, student.getClassNum());
+				statement.setBoolean(4, student.isAttend());
+				statement.setString(5, student.getNo());
+
+			}
+			//プリペアードステートメントを実行
+			count = statement.executeUpdate();
+	}catch (Exception e){
+		throw e;
+	}finally{
+		//プリペアードステートメントを閉じる
+		if(statement != null){
+			try{
+				statement.close();
+			}catch(SQLException sqle){
+				throw sqle;
+			}
+		}
+		//コネクションを閉じる
+		if(connection != null){
+			try{
+				connection.close();
+			}catch (SQLException sqle){
+				throw sqle;
+			}
+		}
+	}
+	if(count > 0){
+		//実行件数が1以上ある場合
+		return true;
+	}else{
+		//実行件数が0の場合
+		return false;
 	}
 
 
