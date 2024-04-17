@@ -7,7 +7,7 @@ public class Teacher implements  Serializable{
 	private String id;
 	private String password;
 	private String name;
-	private String school;
+	private School school;
 
 	public String getId(){
 		return id;
@@ -33,11 +33,11 @@ public class Teacher implements  Serializable{
 		this.name = name;
 	}
 
-	public String getSchool(){
+	public School getSchool(){
 		return school;
 	}
 
-	public void setSchool(String school){
+	public void setSchool(School school){
 		this.school = school;
 	}
 }
