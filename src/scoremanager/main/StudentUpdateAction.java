@@ -17,7 +17,7 @@ import dao.ClassNumDao;
 import dao.StudentDao;
 import tool.Action;
 
-public class StudentListAction extends Action {
+public class StudentUpdateAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -35,8 +35,6 @@ public class StudentListAction extends Action {
 //		teacher.setName("大原花子");
 //		teacher.setPassword("password");
 //		teacher.setSchool(school);
-
-
 
 
 		String entYearStr="";//入力された入学年度
@@ -58,8 +56,6 @@ public class StudentListAction extends Action {
 
 		//DBからデータ取得３
 		//ログインユーザーの学校コードをもとにクラス番号の一覧を取得
-
-
 		List<String> list = cNumDao.filter(teacher.getSchool());
 
 		if (entYear != 0 && !classNum.equals("0")) {
@@ -107,8 +103,31 @@ public class StudentListAction extends Action {
 		request.setAttribute("class_num_set", list);
 		request.setAttribute("ent_year_set", entYearSet);
 
+		String no=request.getParameter("no");
+
+		StudentDao dao=new StudentDao();
+
+
+		Integer ent_year=dao.get(no).getEntYear();
+		String name=dao.get(no).getName();
+
+
+
+		request.setAttribute("no", no);
+		request.setAttribute("ent_year", ent_year);
+		request.setAttribute("name", name);
+
+
+;
+
+
+
+
+
+
+
 		//JSPへフォワード７
-		request.getRequestDispatcher("student_list.jsp").forward(request, response);
+		request.getRequestDispatcher("student_update.jsp").forward(request, response);
 	}
 
 }

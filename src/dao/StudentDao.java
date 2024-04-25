@@ -11,9 +11,9 @@ import bean.School;
 import bean.Student;
 public class StudentDao extends Dao{
 
-	private String baseSql;
+	private String baseSql ="select * from student where school_cd=? ";
 
-	public Student get(String no) throws Exception{
+	public Student get(String id) throws Exception{
 		//学生インスタンスを初期化
 		Student student = new Student();
 		//データベースへのコネクションを確率
@@ -24,7 +24,7 @@ public class StudentDao extends Dao{
 			//プリペアードステートメントにSQL文をセット
 			statement = connection.prepareStatement("select * from student where no=?");
 			//プリペアードステートメントに学生番号をバインド
-			statement.setString(1, no);
+			statement.setString(1, id);
 			//プリペアードステートメントを実行
 			ResultSet rSet = statement.executeQuery();
 
@@ -37,10 +37,10 @@ public class StudentDao extends Dao{
 				student.setNo(rSet.getString("no"));
 				student.setName(rSet.getString("name"));
 				student.setEntYear(rSet.getInt("ent_year"));
-				student.setClassNum(rSet.getString("class_name"));
+				student.setClassNum(rSet.getString("class_num"));
 				student.setAttend(rSet.getBoolean("is_attend"));
 				//学生フィールドには学校コードで検索した学校インスタンスをセット
-				student.setSchool(schoolDao.get(rSet.getString("school_id")));
+				student.setSchool(schoolDao.get(rSet.getString("school_cd")));
 			}else{
 				//リザルトリセットが存在しない場合
 				//学生インスタンスにnullをセット
@@ -74,7 +74,7 @@ public class StudentDao extends Dao{
 
 
 
-	private String baseSql1 ="select * from student where school_cd=?";
+
 
 
 	private List<Student>postFilter(ResultSet rSet,School school)throws Exception{
@@ -88,7 +88,7 @@ public class StudentDao extends Dao{
 				//学生インスタンスに検索結果をセット
 				student.setNo(rSet.getString("no"));
 				student.setName(rSet.getString("name"));
-				student.setEntYear(rSet.getInt("entYear"));
+				student.setEntYear(rSet.getInt("ent_Year"));
 				student.setClassNum(rSet.getString("class_num"));
 				student.setAttend(rSet.getBoolean("is_attend"));
 				student.setSchool(school);
@@ -285,7 +285,7 @@ public class StudentDao extends Dao{
 			}else{
 				//学生が存在した場合
 				//プライベートステートメントにUPDATE文をセット
-				statement = connection.prepareStatement("update student set name=?,ent_year=?,class_num=?,is_atend=? where no=?");
+				statement = connection.prepareStatement("update student set name=?,ent_year=?,class_num=?,is_attend=? where no=?");
 				//プライベートステートメントに値をバインド
 				statement.setString(1, student.getName());
 				statement.setInt(2, student.getEntYear());
@@ -326,44 +326,6 @@ public class StudentDao extends Dao{
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
