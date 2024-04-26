@@ -66,7 +66,7 @@ public class TeacherDao extends Dao {
 	}
 
 
-	public Teacher search(String id, String password)
+	public Teacher login(String id, String password)
 		throws Exception {
 		Teacher teacher=null;
 
