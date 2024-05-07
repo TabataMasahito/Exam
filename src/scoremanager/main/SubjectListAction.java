@@ -35,7 +35,7 @@ public class SubjectListAction extends Action {
 
 
 		List<Subject> subject = null;//学生リスト
-		SubjectDao sDao = new SubjectDao();//学生Dao
+		SubjectDao sDao = new SubjectDao();//
 		Map<String, String> errors = new HashMap<>();//エラーメッセージ
 
 		subject = sDao.filter(teacher.getSchool());

@@ -13,12 +13,12 @@
 		<section class="me-4">
 			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目管理</h2>
 			<div class="my-2 text-end px-4">
-				<a href="SubjecttCreate.action">新規登録</a>
+				<a href="SubjectCreate.action">新規登録</a>
 			</div>
 
 			<c:choose>
-				<c:when test="${students.size()>0}">
-				<div>検索結果：${students.size()}件</div>
+				<c:when test="${subject.size()>0}">
+				<div></div>
 				<table class="table table-hover">
 					<tr>
 						<th>科目コード</th>
@@ -36,8 +36,8 @@
 								<%-- --%>
 
 						</td>
-						<td><a href="StudentUpdate.action?no=${student.no}">変更</a></td>
-						<td><a href="StudentDelete.action?no=${student.no}">削除</a></td>
+						<td><a href="SubjectUpdate.action?cd=${subject.cd}">変更</a></td>
+						<td><a href="SubjectDelete.action?cd=${subject.cd}">削除</a></td>
 					</tr>
 				</c:forEach>
 				</table>
