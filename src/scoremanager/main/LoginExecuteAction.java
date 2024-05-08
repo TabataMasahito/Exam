@@ -19,11 +19,10 @@ public class LoginExecuteAction extends Action {
 		String password=request.getParameter("password");
 
 		TeacherDao dao=new TeacherDao();
-		Teacher teacher=dao.search(id, password);
+		Teacher teacher=dao.login(id, password);
 
 		if (teacher!=null) {
 
-			teacher = dao.get(id);
 			session.setAttribute("teacher", teacher);
 			request.getRequestDispatcher("menu.jsp").forward(request, response);
 		}
