@@ -20,7 +20,7 @@
 					<p></p>
 					<div class="col-4">
 					<label></label>科目コード
-					<input value="${cd}" name="cd"readonly />
+					<input value="${cd}" size="84 " name="cd" readonly />
 					</div>
 
 					<p></p>
