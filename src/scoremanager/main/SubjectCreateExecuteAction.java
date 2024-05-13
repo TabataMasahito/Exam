@@ -14,7 +14,7 @@ public class SubjectCreateExecuteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO 自動生成されたメソッド・スタブ
 		HttpSession session = request.getSession();//セッション
-		Teacher teacher = (Teacher)session.getAttribute("teacher");
+		Teacher teacher = (Teacher)session.getAttribute("user");
 
 
 		String cd=request.getParameter("cd");
@@ -24,7 +24,7 @@ public class SubjectCreateExecuteAction extends Action {
 		p.setCd(cd);
 		p.setName(name);
 
-		p.setSchool(((Teacher)session.getAttribute("teacher")).getSchool());
+		p.setSchool(((Teacher)session.getAttribute("user")).getSchool());
 
 
 

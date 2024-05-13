@@ -29,13 +29,13 @@
 					<p></p>
 					<div class="col-4">
 					学生番号
-					<input type="text"size="84"name="no"placeholder="学生番号を入力してください" required>
+					<input type="text"size="84"name="no"placeholder="学生番号を入力してください" required  maxlength="10">
 					</div>
 
 					<p></p>
 					<div class="col-4">
 					氏名
-					<input type="text" size="84" name="name" placeholder="氏名を入力してください" required>
+					<input type="text" size="84" name="name" placeholder="氏名を入力してください" required  maxlength="30">
 					</div>
 
 					<p></p>

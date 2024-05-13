@@ -31,7 +31,7 @@
 					<p></p>
 					<div class="col-4">
 					氏名
-					<input type="text" size="84" name="name" value="${name}" >
+					<input type="text" size="84" name="name" value="${name}" maxlength="20" required>
 					</div>
 										<p></p>
 

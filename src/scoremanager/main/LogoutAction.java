@@ -15,8 +15,9 @@ public class LogoutAction extends Action {
 		HttpSession session=request.getSession();
 
 		//セッション情報があるかどうかを確認する
-		if (session.getAttribute("teacher")!=null) {
-			session.removeAttribute("teacher");
+		if (session.getAttribute("user")!=null) {
+			session.removeAttribute("user");
+
 			request.getRequestDispatcher("logout.jsp").forward(request, response);
 		}
 
