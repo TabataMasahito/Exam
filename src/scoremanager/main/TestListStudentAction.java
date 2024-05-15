@@ -23,7 +23,7 @@ public class TestListStudentAction extends Action {
 
 		School school=new School();
 		school.setCd("oom");
-		//school.setName("学校名");
+		school.setName("学校名");
 
 		Teacher teacher = new Teacher();
 		teacher.setId("admin");

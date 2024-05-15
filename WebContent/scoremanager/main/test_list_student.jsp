@@ -78,6 +78,7 @@ pageEncoding="UTF-8" %>
 							<th>科目コード</th>
 							<th>回数</th>
 							<th>点数</th>
+
 						</tr>
 						<c:forEach var="student" items="${students}">
 							<tr>
