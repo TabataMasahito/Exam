@@ -1,5 +1,8 @@
 package scoremanager.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -8,25 +11,56 @@ import bean.Teacher;
 import dao.TeacherDao;
 import tool.Action;
 
+
 public class LoginExecuteAction extends Action {
 
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@Override
+	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		//ローカル変数の宣言 1
+		String url = "";
+		String id = "";
+		String password = "";
+		TeacherDao teacherDao = new TeacherDao();
+		Teacher teacher = null;
 
+		//リクエストパラメータ―の取得 2
+		id = req.getParameter("id");// 教員ID
+		password = req.getParameter("password");//パスワード
 
-		HttpSession session=request.getSession();
+		//DBからデータ取得 3
+		teacher = teacherDao.login(id, password);//教員データ取得
 
-		String id=request.getParameter("id");
-		String password=request.getParameter("password");
+		//ビジネスロジック 4
+		//DBへデータ保存 5
+		//レスポンス値をセット 6
+		//フォワード 7
+		//条件で手順4~7の内容が分岐
+		if (teacher != null) {// 認証成功の場合
+			// セッション情報を取得
+			HttpSession session = req.getSession(true);
+			// 認証済みフラグを立てる
+			teacher.setAuthenticated(true);
+			// セッションにログイン情報を保存
+			session.setAttribute("user", teacher);
 
-		TeacherDao dao=new TeacherDao();
-		Teacher teacher=dao.login(id, password);
+			//リダイレクト
+			url = "Menu.action";
+			res.sendRedirect(url);
+		} else {
+			// 認証失敗の場合
+			// エラーメッセージをセット
+			List<String> errors = new ArrayList<>();
+			errors.add("IDまたはパスワードが確認できませんでした");
+			req.setAttribute("errors", errors);
+			// 入力された教員IDをセット
+			req.setAttribute("id", id);
 
-		if (teacher!=null) {
-
-			session.setAttribute("teacher", teacher);
-			request.getRequestDispatcher("menu.jsp").forward(request, response);
+			//フォワード
+			url = "login.jsp";
+			req.getRequestDispatcher(url).forward(req, res);
 		}
 
-		request.getRequestDispatcher("../../error.jsp").forward(request, response);
+//		req.getRequestDispatcher(url).forward(req, res);
 	}
+
 }

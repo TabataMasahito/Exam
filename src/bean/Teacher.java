@@ -8,6 +8,8 @@ public class Teacher implements  Serializable{
 	private String password;
 	private String name;
 	private School school;
+	private boolean isAuthenticated;
+
 
 	public String getId(){
 		return id;
@@ -39,6 +41,13 @@ public class Teacher implements  Serializable{
 
 	public void setSchool(School school){
 		this.school = school;
+	}
+	public boolean isAuthenticated() {
+		return isAuthenticated;
+	}
+
+	public void setAuthenticated(boolean isAuthenticated) {
+		this.isAuthenticated = isAuthenticated;
 	}
 }
 

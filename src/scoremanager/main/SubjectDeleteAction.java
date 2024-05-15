@@ -17,7 +17,7 @@ public class SubjectDeleteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO 自動生成されたメソッド・スタブ
 		HttpSession session = request.getSession();//セッション
-		Teacher teacher = (Teacher)session.getAttribute("teacher");
+		Teacher teacher = (Teacher)session.getAttribute("user");
 
 
 		Map<String, String> errors = new HashMap<>();//エラーメッセージ
