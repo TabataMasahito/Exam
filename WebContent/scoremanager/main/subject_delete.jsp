@@ -23,9 +23,9 @@
 					<input type="hidden" id="cd" name="cd" value="${cd}" />
 
 
-				<input type="submit" value="削除">
+				<input type="submit" value="削除"style="background-color:red; border-color:red; color:white">
 				<p></p>
-				<a href="StudentList.action">戻る</a>
+				<a href="SubjectList.action">戻る</a>
 			</form>
 
 	</section>

@@ -16,9 +16,7 @@
 				<p>削除が完了しました</p>
 			</div>
 			<div class="lh-lg row" style="margin-top: 8rem;">
-				<div class="mx-3 col-1">
-					<a href="SubjectDelete.action">戻る</a>
-				</div>
+
 				<div class="mx-3 col-2">
 					<a href="SubjectList.action">科目一覧</a>
 				</div>

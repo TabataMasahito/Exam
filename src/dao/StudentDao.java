@@ -174,7 +174,7 @@ public class StudentDao extends Dao{
 		//SQL文の在学フラグ
 		String conditionIsAttend = "";
 		if(isAttend){
-			conditionIsAttend = "and is_attend=true";
+			conditionIsAttend = " and is_attend=true";
 		}
 		try{
 			//プリペアードステートメントにSQL文をセット

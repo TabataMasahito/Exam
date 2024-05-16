@@ -26,6 +26,7 @@ public class StudentUpdateAction extends Action {
 		Teacher teacher = (Teacher)session.getAttribute("user");
 
 		School school = new School();
+
 //		school.setCd("oom");//学校コードをセットする
 //		school.setName("学校名");//学校名をセットする
 //

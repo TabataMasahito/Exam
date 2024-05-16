@@ -16,9 +16,7 @@
 				<p>変更が完了しました</p>
 			</div>
 			<div class="lh-lg row" style="margin-top: 8rem;">
-				<div class="mx-3 col-1">
-					<a href="StudentCreate.action">戻る</a>
-				</div>
+
 				<div class="mx-3 col-2">
 					<a href="StudentList.action">学生一覧</a>
 				</div>

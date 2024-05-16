@@ -21,6 +21,8 @@
 					<div class="col-4">
 					<label></label>科目コード
 					<input value="${cd}" size="84 " name="cd" readonly />
+					<div class="mt-2 text-warning">${errors.get("cd")}</div>
+
 					</div>
 
 					<p></p>
@@ -37,7 +39,7 @@
 
 					<div class="mt-2 text-warning">${errors.get("f1")}</div>
 				</div>
-				<input type="submit" value="更新">
+				<input type="submit" value="変更">
 				<p></p>
 				<a href="SubjectList.action">戻る</a>
 			</form>
