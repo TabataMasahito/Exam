@@ -43,7 +43,15 @@
 				</table>
 			</c:when>
 			<c:otherwise>
-				<div></div>
+			<table class="table table-hover">
+					<tr>
+						<th>科目コード</th>
+						<th>科目名</th>
+
+						<th></th>
+						<th></th>
+					</tr>
+				</table>
 			</c:otherwise>
 		</c:choose>
 	</section>
