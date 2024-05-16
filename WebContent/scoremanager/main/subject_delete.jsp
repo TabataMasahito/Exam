@@ -25,7 +25,7 @@
 
 				<input type="submit" value="削除">
 				<p></p>
-				<a href="StudentList.action">戻る</a>
+				<a href="SubjectList.action">戻る</a>
 			</form>
 
 	</section>
