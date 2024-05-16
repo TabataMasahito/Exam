@@ -37,7 +37,7 @@
 
 					<div class="mt-2 text-warning">${errors.get("f1")}</div>
 				</div>
-				<input type="submit" value="更新">
+				<input type="submit" value="変更">
 				<p></p>
 				<a href="SubjectList.action">戻る</a>
 			</form>
