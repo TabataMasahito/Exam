@@ -18,7 +18,7 @@
 
 
 						<label>入学年度</label>
-						<input value="${ent_year}" name="ent_year" readonly />
+						<input value="${ent_year}" name="ent_year" size="84"readonly />
 
 
 
