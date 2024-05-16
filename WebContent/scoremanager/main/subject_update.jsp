@@ -21,6 +21,8 @@
 					<div class="col-4">
 					<label></label>科目コード
 					<input value="${cd}" size="84 " name="cd" readonly />
+					<div class="mt-2 text-warning">${errors.get("cd")}</div>
+
 					</div>
 
 					<p></p>

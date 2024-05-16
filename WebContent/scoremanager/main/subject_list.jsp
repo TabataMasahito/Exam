@@ -43,7 +43,15 @@
 				</table>
 			</c:when>
 			<c:otherwise>
-				<div>学生情報が存在しませんでした</div>
+			<table class="table table-hover">
+					<tr>
+						<th>科目コード</th>
+						<th>科目名</th>
+
+						<th></th>
+						<th></th>
+					</tr>
+				</table>
 			</c:otherwise>
 		</c:choose>
 	</section>
