@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.School;
+import bean.Teacher;
 import dao.ClassNumDao;
 import tool.Action;
 
@@ -24,7 +25,7 @@ public class TestListStudentAction extends Action {
 		school.setCd("oom");
 		school.setName("学校名");
 
-//		Teacher teacher = new Teacher();
+		Teacher teacher = new Teacher();
 //		teacher.setId("admin");
 //		teacher.setPassword("password");
 //		teacher.setName("大原花子");
