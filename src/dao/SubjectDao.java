@@ -244,6 +244,19 @@ public class SubjectDao extends Dao{
 			return false;
 		}
 	}
+
+
+	public List<String> filter_name(School school) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		return null;
+	}
+
+
+	public List<String> filter_cd(School school) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 	}
 
 

@@ -26,15 +26,15 @@ public class StudentListAction extends Action {
 		Teacher teacher = (Teacher)session.getAttribute("user");
 
 		School school = new School();
-//		school.setCd("oom");//学校コードをセットする
-//		school.setName("学校名");//学校名をセットする
+		//school.setCd("oom");//学校コードをセットする
+		//school.setName("学校名");//学校名をセットする
 //
 //
-//		Teacher teacher = new Teacher();
-//		teacher.setId("admin");
-//		teacher.setName("大原花子");
-//		teacher.setPassword("password");
-//		teacher.setSchool(school);
+		//Teacher teacher = new Teacher();
+		//teacher.setId("admin");
+		//teacher.setName("大原花子");
+		//teacher.setPassword("password");
+		//teacher.setSchool(school);
 
 
 

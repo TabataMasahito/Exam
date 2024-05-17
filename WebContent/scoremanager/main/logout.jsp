@@ -17,7 +17,7 @@
 			</div>
 			<div class="lh-lg row" style="margin-top: 8rem;">
 				<div class="mx-3 col-1">
-					<a href="Login.action">ログイン</a>
+					<a href="Login.action"> ログイン </a>
 				</div>
 			</div>
 		</section>
